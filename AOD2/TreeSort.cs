@@ -18,6 +18,7 @@ namespace AOD2
             Items = new List<int>(tree.Inorder());
             Timer.Stop();
             Time = Timer.Elapsed;
+            ComparisonsCount = tree.ComparisonsCount;
         }
     }
 }

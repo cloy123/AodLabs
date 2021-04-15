@@ -27,8 +27,8 @@ namespace AOD2
             }
 
             var pivotIndex = Partition(items, minIndex, maxIndex);
-            quickSort(items, minIndex, pivotIndex - 1);
-            quickSort(items, pivotIndex + 1, maxIndex);
+            items = quickSort(items, minIndex, pivotIndex - 1);
+            items = quickSort(items, pivotIndex + 1, maxIndex);
             return items;
         }
 

@@ -8,6 +8,8 @@ namespace AOD2.Tree
     public class BinaryTree
     {
         protected Node root;
+        public int ComparisonsCount = 0;
+        public int Count { get; protected set; }
 
         public BinaryTree(List<int> items)
         {
@@ -44,11 +46,6 @@ namespace AOD2.Tree
             return items;
         }
 
-        public int Count
-        {
-            get;
-            protected set;
-        }
         public void Add(int item)
         {
             var node = new Node(item);
@@ -62,12 +59,14 @@ namespace AOD2.Tree
                 while (current != null)
                 {
                     parent = current;
+                    ComparisonsCount++;
                     if (item < current.Value)
                         current = current.Left;
                     else
                         current = current.Right;
                 }
 
+                ComparisonsCount++;
                 if (item < parent.Value)
                     parent.Left = node;
                 else

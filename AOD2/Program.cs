@@ -8,22 +8,20 @@ namespace AOD2
 {
     class Program
     {
-        //B  | K,% | L  |M,%|  1  |  2  |  3
-        //14 | 50  | 10 | 4 | 3.7 | 3.6 | 3.10
-
         static double K = 50;
         static int L = 10;
         static double M = 4;
 
         static void Main(string[] args)
         {
+            SortTest(100);
+            SortTest(1000);
             SortTest(10000);
         }
 
         static void SortTest(int n)
         {
             Console.WriteLine($"n = {n}\n");
-
             List<int> randNumsArray = GetRandNums(n);
             List<int> randNumsWithRepetitions = GetRandNumsWithRepetitions(n, K, 1);
             List<int> numsWithSortArrays = GetNumsWithSortArrays(n, L);
